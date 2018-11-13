@@ -2192,7 +2192,7 @@ namespace yy {
   case 79:
 #line 1242 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_secRuleEngine = modsecurity::Rules::DisabledRuleEngine;
+        driver.m_secRuleEngine = modsecurity::RulesSet::DisabledRuleEngine;
       }
 #line 2198 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2200,7 +2200,7 @@ namespace yy {
   case 80:
 #line 1246 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_secRuleEngine = modsecurity::Rules::EnabledRuleEngine;
+        driver.m_secRuleEngine = modsecurity::RulesSet::EnabledRuleEngine;
       }
 #line 2206 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2208,7 +2208,7 @@ namespace yy {
   case 81:
 #line 1250 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_secRuleEngine = modsecurity::Rules::DetectionOnlyRuleEngine;
+        driver.m_secRuleEngine = modsecurity::RulesSet::DetectionOnlyRuleEngine;
       }
 #line 2214 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2765,7 +2765,7 @@ namespace yy {
   case 130:
 #line 1614 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_requestBodyLimitAction = modsecurity::Rules::BodyLimitAction::ProcessPartialBodyLimitAction;
+        driver.m_requestBodyLimitAction = modsecurity::RulesSet::BodyLimitAction::ProcessPartialBodyLimitAction;
       }
 #line 2771 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2773,7 +2773,7 @@ namespace yy {
   case 131:
 #line 1618 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_requestBodyLimitAction = modsecurity::Rules::BodyLimitAction::RejectBodyLimitAction;
+        driver.m_requestBodyLimitAction = modsecurity::RulesSet::BodyLimitAction::RejectBodyLimitAction;
       }
 #line 2779 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2781,7 +2781,7 @@ namespace yy {
   case 132:
 #line 1622 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_responseBodyLimitAction = modsecurity::Rules::BodyLimitAction::ProcessPartialBodyLimitAction;
+        driver.m_responseBodyLimitAction = modsecurity::RulesSet::BodyLimitAction::ProcessPartialBodyLimitAction;
       }
 #line 2787 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2789,7 +2789,7 @@ namespace yy {
   case 133:
 #line 1626 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_responseBodyLimitAction = modsecurity::Rules::BodyLimitAction::RejectBodyLimitAction;
+        driver.m_responseBodyLimitAction = modsecurity::RulesSet::BodyLimitAction::RejectBodyLimitAction;
       }
 #line 2795 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2797,7 +2797,7 @@ namespace yy {
   case 134:
 #line 1630 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_remoteRulesActionOnFailed = Rules::OnFailedRemoteRulesAction::AbortOnFailedRemoteRulesAction;
+        driver.m_remoteRulesActionOnFailed = RulesSet::OnFailedRemoteRulesAction::AbortOnFailedRemoteRulesAction;
       }
 #line 2803 "seclang-parser.cc" // lalr1.cc:870
     break;
@@ -2805,7 +2805,7 @@ namespace yy {
   case 135:
 #line 1634 "seclang-parser.yy" // lalr1.cc:870
     {
-        driver.m_remoteRulesActionOnFailed = Rules::OnFailedRemoteRulesAction::WarnOnFailedRemoteRulesAction;
+        driver.m_remoteRulesActionOnFailed = RulesSet::OnFailedRemoteRulesAction::WarnOnFailedRemoteRulesAction;
       }
 #line 2811 "seclang-parser.cc" // lalr1.cc:870
     break;
