@@ -29,15 +29,16 @@ namespace modsecurity {
 namespace actions {
 
 
-bool Block::evaluate(Rule *rule, Transaction *transaction,
+bool Block::evaluate(Rule *rule, Transaction *t,
     std::shared_ptr<RuleMessage> rm) {
-    ms_dbg_a(transaction, 8, "Marking request as disruptive.");
+    ms_dbg_a(t, 8, "Marking request as disruptive.");
 
-    for (Action *a : transaction->m_rules->m_defaultActions[rule->m_phase]) {
+    for (int ai = 0; ai < t->m_rules->m_defaultActionsAtPhase[rule->m_phase].size(); ai++) {
+        Action *a = t->m_rules->m_defaultActionsAtPhase[rule->m_phase].at(ai).get();
         if (a->isDisruptive() == false) {
             continue;
         }
-        a->evaluate(rule, transaction, rm);
+        a->evaluate(rule, t, rm);
     }
 
     return true;

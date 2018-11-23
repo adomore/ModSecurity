@@ -23,6 +23,7 @@
 
 #include "modsecurity/intervention.h"
 #include "modsecurity/rule.h"
+#include "modsecurity/actions/actions.h"
 
 #ifndef HEADERS_MODSECURITY_ACTIONS_ACTION_H_
 #define HEADERS_MODSECURITY_ACTIONS_ACTION_H_
@@ -90,19 +91,6 @@ class Action {
             m_parser_payload.erase(0, 1);
             m_parser_payload.pop_back();
         }
-    }
-
-    int refCountDecreaseAndCheck() {
-        this->m_referenceCount--;
-        if (this->m_referenceCount == 0) {
-            delete this;
-            return 1;
-        }
-        return 0;
-    }
-
-    void refCountIncrease() {
-        this->m_referenceCount++;
     }
 
     bool m_isNone;

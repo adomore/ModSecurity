@@ -1215,7 +1215,7 @@ expression:
             YYERROR;
         }
 
-        if (!driver.m_defaultActions[definedPhase].empty()) {
+        if (!driver.m_defaultActionsAtPhase[definedPhase].empty()) {
             std::stringstream ss;
             ss << "SecDefaultActions can only be placed once per phase and configuration context. Phase ";
             ss << secRuleDefinedPhase;
@@ -1225,7 +1225,7 @@ expression:
         }
 
         for (actions::Action *a : checkedActions) {
-            driver.m_defaultActions[definedPhase].push_back(a);
+            driver.m_defaultActionsAtPhase[definedPhase].insert(std::unique_ptr<Action>(a));
         }
 
         delete actions;
